@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Player {
+class Player {
     private String name;
     private int score;
 
@@ -82,9 +82,17 @@ public class DiceGame {
     }
 
     private void displayFinalScores() {
+        int maxScore = 0;
+        String winner = players[0].getName();
         for (Player player : players) {
             player.displayPlayerInfo();
+            int score = player.getScore();
+            if(score > maxScore){
+                maxScore = score;
+                winner = player.getName();
+            }
         }
+        System.out.println("Winner is: "+winner);
     }
 
     public static void main(String[] args) {
