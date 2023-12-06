@@ -1,7 +1,7 @@
 #### Dice Game
-> Usage:
->> java DiceGame 
->> Enter player 1 name: Andy
+Usage: 
+> java DiceGame 
+>> Enter player 1 name: Andy 
 >> Enter player 2 name: Jacky
 >> Player: Andy, Score: 1
 >> Continue? (yes/no): yes
