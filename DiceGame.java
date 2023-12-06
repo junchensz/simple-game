@@ -4,6 +4,7 @@ import java.util.Random;
 class Player {
     private String name;
     private int score;
+    private boolean isWinner;
 
     public Player(String name) {
         this.name = name;
@@ -25,6 +26,14 @@ class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public void setIsWinner(boolean isWinner){
+        this.isWinner = isWinner;
+    }
+
+    public boolean isWinner(){
+        return this.isWinner;
     }
 
     // Additional functional methods
@@ -83,16 +92,17 @@ public class DiceGame {
 
     private void displayFinalScores() {
         int maxScore = 0;
-        String winner = players[0].getName();
+        Player winner = players[0];
         for (Player player : players) {
             player.displayPlayerInfo();
             int score = player.getScore();
             if(score > maxScore){
                 maxScore = score;
-                winner = player.getName();
+                winner = player;
+                winner.setIsWinner(true);
             }
         }
-        System.out.println("Winner is: "+winner);
+        System.out.println("Winner is: "+winner.getName());
     }
 
     public static void main(String[] args) {
